@@ -25,7 +25,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo">
-          <h1>Property Name</h1>
+          <img src="/logo.png" alt="Property Logo" className="logo-image" />
         </Link>
 
         <nav className="desktop-nav">

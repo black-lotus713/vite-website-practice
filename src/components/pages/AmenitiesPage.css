@@ -1,0 +1,41 @@
+.amenities-page {
+  max-width: 1000px;
+}
+
+.page-header {
+  margin-bottom: 3rem;
+}
+
+.amenities-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.amenity-category {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.amenity-category:last-child {
+  border-bottom: none;
+}
+
+.category-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}

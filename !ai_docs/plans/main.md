@@ -47,16 +47,23 @@ A modern, responsive personal website built with React, TypeScript, and Vite, sh
    - Pagination or infinite scroll
 
 6. **Book/Reserve** (`/book`)
-   - Airbnb calendar widget integration
+   - Generic calendar widget with iCal integration
+   - Import availability from Airbnb and VRBO iCal feeds
    - Pricing information
    - Booking rules and policies
-   - Direct booking link
+   - Links to booking platforms
 
 7. **Contact** (`/contact`)
    - Contact form with validation
    - Property owner information
    - Social media links
    - FAQ section
+
+### Data Integration Overview
+- **Shared Types**: `src/types/index.ts` defines the contracts (`PropertyInfo`, `HostInfo`, `HouseRules`, `Amenities`, `Review`, `ReviewSummary`, `LocationDetails`, etc.) that every page should consume. No feature work is “done” until it uses these types instead of inline shapes.
+- **Structured Data Modules**: `src/data/propertyData.ts`, `src/data/amenities.ts`, and `src/data/reviews.ts` source the Airbnb scrape results. These feed page content, cards, and widgets so we avoid placeholder copy.
+- **Consumption Pattern**: Pages and feature components import the relevant module(s) through typed selectors/utilities. This keeps UI logic thin: render data, don’t recreate it. Any helper logic (grouping amenities, formatting ratings, selecting highlights) lives in `src/utils`.
+- **Data-driven Layouts**: Layout elements (global facts strip, CTAs, summary panels) must read from the modules so updates to the scrape data automatically propagate across Home, Book, Amenities, Location, Reviews, and Contact pages.
 
 ### Tech Stack
 
@@ -86,7 +93,8 @@ A modern, responsive personal website built with React, TypeScript, and Vite, sh
 - CSS variables for theming
 
 #### Third-Party Integrations
-- Airbnb calendar embed/widget
+- Generic calendar widget with iCal feed support
+- Airbnb and VRBO iCal calendar synchronization
 - Google Maps or Mapbox API
 - Form validation library (optional)
 
@@ -95,30 +103,30 @@ A modern, responsive personal website built with React, TypeScript, and Vite, sh
 ## Component Architecture
 
 ### Layout Components
-- `Layout.tsx` - Main layout wrapper
-- `Header.tsx` - Navigation header
-- `MobileMenu.tsx` - Mobile hamburger menu
-- `Footer.tsx` - Footer with links and social media
+- `Layout.tsx` - Main layout wrapper; pulls global facts (capacity, rules summary) from `propertyData` to render a persistent strip.
+- `Header.tsx` - Navigation header with quick links to data-driven sections (gallery, amenities, book).
+- `MobileMenu.tsx` - Mobile hamburger menu sharing the same nav data as `Header`.
+- `Footer.tsx` - Footer with links and social media; can echo host/contact info from `propertyData.host`.
 
 ### Page Components
-- `HomePage.tsx` - Landing page
-- `GalleryPage.tsx` - Photo gallery
-- `AmenitiesPage.tsx` - Amenities showcase
-- `LocationPage.tsx` - Location and map
-- `ReviewsPage.tsx` - Guest reviews
-- `BookPage.tsx` - Booking/reservation
-- `ContactPage.tsx` - Contact form
+- `HomePage.tsx` - Landing page consuming `propertyData` highlights, hero basics, and CTA copy plus featured amenities.
+- `GalleryPage.tsx` - Photo gallery backed by `propertyImages` (already implemented) and future metadata in `propertyData`.
+- `AmenitiesPage.tsx` - Amenities showcase rendering grouped lists from `amenities` via helper utilities.
+- `LocationPage.tsx` - Location and map using `propertyData.locationDetails` for attractions and travel notes.
+- `ReviewsPage.tsx` - Guest reviews showing `reviews.summary` and mapping `reviews.items` into UI components.
+- `BookPage.tsx` - Booking/reservation page presenting house rules and booking CTAs sourced from `propertyData`.
+- `ContactPage.tsx` - Contact form plus host info drawn from `propertyData.host`.
 
 ### Feature Components
-- `Hero.tsx` - Hero section with CTA
-- `AvailabilityChecker.tsx` - Quick date checker widget
-- `ImageGallery.tsx` - Gallery grid component
-- `Lightbox.tsx` - Image modal viewer
-- `AmenityCard.tsx` - Individual amenity card
-- `Map.tsx` - Map embed component
-- `ReviewCard.tsx` - Individual review card
-- `ContactForm.tsx` - Contact form with validation
-- `BookingWidget.tsx` - Airbnb calendar integration
+- `Hero.tsx` - Hero section with CTA populated by `propertyData.propertyInfo`.
+- `AvailabilityChecker.tsx` - Quick date checker widget highlighting rules (min nights, check-in/out) from `propertyData.houseRules`.
+- `ImageGallery.tsx` - Gallery grid component using `propertyImages` data.
+- `Lightbox.tsx` - Image modal viewer fed by `propertyImages`.
+- `AmenityCard.tsx` - Individual amenity card capable of rendering amenity category + icon from `amenities` utilities.
+- `Map.tsx` - Map embed component receiving coordinates and nearby attractions from `propertyData.locationDetails`.
+- `ReviewCard.tsx` - Individual review card typed with `Review` and showing provenance from `reviews`.
+- `ContactForm.tsx` - Contact form with validation; success content can reference host data.
+- `BookingWidget.tsx` - Generic calendar widget with iCal integration for Airbnb/VRBO availability, plus highlight stats from `propertyData.propertyInfo` and `houseRules`.
 
 ### Shared/UI Components
 - `Button.tsx` - Reusable button component
@@ -126,6 +134,8 @@ A modern, responsive personal website built with React, TypeScript, and Vite, sh
 - `Modal.tsx` - Modal/dialog component
 - `Spinner.tsx` - Loading spinner
 - `Icon.tsx` - Icon wrapper component
+- `HighlightCard.tsx` - Generic stat/highlight block for property facts, reused on Home and Book pages with `propertyData` entries.
+- `StatsStrip.tsx` - Always-on facts strip (capacity, pets, check-in/out) that lives in Layout and reads from `propertyData.houseRules`.
 
 ---
 
@@ -137,6 +147,13 @@ A modern, responsive personal website built with React, TypeScript, and Vite, sh
 - Component composition over inheritance
 - Props interfaces for all components
 - Meaningful component and variable names
+
+### Data & Utils
+- Keep scraped content in `src/data/*.ts` modules only; components import from these sources rather than duplicating strings.
+- Extend `src/types/index.ts` first whenever data structures change, then update modules + components to match.
+- Centralize derived logic (amenity grouping, rating formatting, CTA copy selectors) inside `src/utils` to keep components declarative.
+- Ensure helpers accept typed inputs/outputs so linting catches mismatches early.
+- When sharing snippets (e.g., house rules) across pages, expose selector functions rather than duplicating object traversal.
 
 ### File Organization
 ```
@@ -187,6 +204,13 @@ src/
 - Optimized file sizes (WebP format)
 - Alt text for accessibility
 
+### Page-specific Layout Notes
+- **Home & Book**: Prioritize reusable highlight/stat cards fed by `propertyData` (capacity, boat slip, kayaks) plus house-rule callouts near booking CTAs.
+- **Amenities**: Present grouped lists (accordion or grid) that mirror amenity categories; consider iconography per group to keep long lists scannable.
+- **Reviews**: Reserve space for a summary module (overall + category ratings) alongside a vertically stacked review list.
+- **Location**: Include a structured “Nearby attractions” grid/table that reads from `LocationDetails`, paired with the map embed.
+- **Global Layout**: Provide an always-visible facts strip (guests, bedrooms, pet policy, check-in/out) so scraped house rules show beyond the Book page.
+
 ---
 
 ## Implementation Roadmap
@@ -212,33 +236,42 @@ src/
 - [ ] Make gallery touch-friendly
 
 ### Sprint 3: Amenities & Location (Week 2)
-- [ ] Design amenity card component
-- [ ] Add icons (react-icons)
-- [ ] Create amenities grid layout
-- [ ] Implement location page layout
-- [ ] Integrate map embed (Google Maps/Mapbox)
-- [ ] Add neighborhood information section
-- [ ] List nearby attractions
-- [ ] Make map responsive
+- [ ] Extend `src/types/index.ts` with `Amenities`, `LocationDetails`, helper enums for grouping.
+- [ ] Create `src/data/propertyData.ts` (location basics) and `src/data/amenities.ts` (categorized items) from scrape results.
+- [ ] Design amenity card component using typed amenity entries + icons.
+- [ ] Add icons (react-icons) mapped per amenity category.
+- [ ] Create amenities grid/accordion layout fed directly from the data module.
+- [ ] Implement location page layout that consumes `propertyData.locationDetails` and nearby attractions.
+- [ ] Integrate map embed (Google Maps/Mapbox) and keep markers in sync with data.
+- [ ] Add neighborhood information section + travel times referencing `LocationDetails`.
+- [ ] List nearby attractions using structured data, no hard-coded strings.
+- [ ] Make map responsive.
+- **Acceptance**: `AmenitiesPage`/`LocationPage` read only from data modules; updating the JSON-like files updates the UI with no code changes.
 
 ### Sprint 4: Reviews & Booking (Week 3)
-- [ ] Create ReviewCard component
-- [ ] Design star rating component
-- [ ] Mock review data
-- [ ] Implement reviews grid/list
-- [ ] Research Airbnb embed options
-- [ ] Create booking page layout
-- [ ] Integrate Airbnb calendar widget/iframe
-- [ ] Add booking policies section
+- [ ] Finalize `Review` + `ReviewSummary` types in `src/types/index.ts`.
+- [ ] Build `src/data/reviews.ts` with summary stats, six reviews, and provenance metadata.
+- [ ] Create ReviewCard component typed with `Review`.
+- [ ] Design star rating component and helper formatter (e.g., `formatRating` in `src/utils/reviews.ts`).
+- [ ] Implement reviews summary panel + list layout pulling directly from the reviews module.
+- [ ] Research generic calendar widget libraries (e.g., FullCalendar, react-big-calendar, react-calendar).
+- [ ] Implement iCal feed parser/fetcher for Airbnb and VRBO availability.
+- [ ] Create booking page layout that reads `propertyData.houseRules`, highlights, and CTA copy.
+- [ ] Integrate generic calendar widget displaying merged availability from multiple iCal sources.
+- [ ] Add booking policies section sourced from `houseRules`.
+- [ ] Include links to Airbnb and VRBO listing pages for direct booking.
+- **Acceptance**: Reviews page renders summary + list from data file; Book page shows calendar with combined iCal availability plus stats/rules from shared modules with no placeholder text.
 
 ### Sprint 5: Contact & Forms (Week 3)
-- [ ] Design contact form layout
-- [ ] Implement form validation
-- [ ] Add error messages and states
-- [ ] Create success message
-- [ ] Add FAQ section
-- [ ] Include social media links
-- [ ] Set up form submission (mock or real)
+- [ ] Design contact form layout.
+- [ ] Implement form validation.
+- [ ] Add error messages and states.
+- [ ] Create success message.
+- [ ] Add FAQ section, including automated answers driven by `propertyData.houseRules` (pets, quiet hours, parking).
+- [ ] Include social media + host contact links sourced from `propertyData.host`.
+- [ ] Set up form submission (mock or real).
+- [ ] Add a reusable Contact/Host info component so Layout/Footer pull from the same source of truth.
+- **Acceptance**: Contact page and footer reference `propertyData.host`; FAQs reference `houseRules` data.
 
 ### Sprint 6: Polish & Optimization (Week 4)
 - [ ] Add loading states
@@ -314,7 +347,7 @@ src/
 
 ### Phase 3: Feature Development 📋
 
-**Status**: Not Started
+**Status**: In Progress (Gallery Complete)
 
 **Objectives**:
 - Build all page components
@@ -322,46 +355,65 @@ src/
 - Integrate third-party services
 - Create reusable UI components
 
+**Completed Work**:
+- ✅ Gallery page with 60+ property images from Airbnb listing
+- ✅ Category-based filtering system
+- ✅ Responsive grid layout with hover effects
+- ✅ Lightbox modal for full-size image viewing
+- ✅ Image lazy loading for performance
+- ✅ TypeScript data structure for property images
+
 **Tasks**:
 
-#### Sprint 1: Home & Gallery (Week 1-2)
-- [ ] Design and implement Hero component
-- [ ] Create home page layout with property highlights
-- [ ] Build availability checker widget UI
-- [ ] Source/create placeholder images
-- [ ] Build Gallery page with grid layout
-- [ ] Implement Lightbox component for image viewing
-- [ ] Add image lazy loading
-- [ ] Make gallery touch-friendly for mobile
+#### Sprint 1: Home & Gallery (Week 1-2) ✅ COMPLETE
+- [x] Design and implement Hero component
+- [x] Create home page layout with property highlights
+- [x] Build availability checker widget UI
+- [x] Source property images from Airbnb listing (60+ images)
+- [x] Create property images data structure with TypeScript interfaces
+- [x] Build Gallery page with responsive grid layout
+- [x] Implement category filtering (Living Room, Kitchen, Bedrooms, Bathrooms, Outdoor, Exterior, Activities)
+- [x] Implement Lightbox modal component for full-size image viewing
+- [x] Add image lazy loading for performance optimization
+- [x] Add hover effects and caption overlays
+- [x] Make gallery touch-friendly for mobile devices
 
-#### Sprint 2: Amenities & Location (Week 2)
-- [ ] Design amenity card component
-- [ ] Add icons from react-icons library
-- [ ] Create amenities grid layout
-- [ ] Implement location page layout
-- [ ] Integrate map embed (Google Maps or Mapbox)
-- [ ] Add neighborhood information section
-- [ ] List nearby attractions with distances
-- [ ] Make map responsive on all devices
+#### Sprint 2: Amenities & Location (Week 2) ✅ COMPLETE
+- [x] Extend `src/types/index.ts` with `Amenities`, `LocationDetails`, and enums for grouping.
+- [x] Convert scrape data into `src/data/propertyData.ts` (location slice) and `src/data/amenities.ts`.
+- [x] Design amenity card component + icons powered by the data file.
+- [x] Create a grouped grid/accordion layout that maps over categorized amenities.
+- [x] Implement location page layout.
+- [x] Integrate map embed (Google Maps or Mapbox) syncing with `LocationDetails` entries.
+- [x] Add neighborhood information section including travel times from data file.
+- [x] List nearby attractions with distances sourced from `LocationDetails`.
+- [x] Make map responsive on all devices.
+- **Definition of Done**: Amenities & Location pages render entirely from the typed data modules (no hard-coded strings).
 
 #### Sprint 3: Reviews & Booking (Week 3)
-- [ ] Create ReviewCard component
-- [ ] Design star rating component
-- [ ] Create mock review data
-- [ ] Implement reviews grid/list layout
-- [ ] Research Airbnb embed options
-- [ ] Create booking page layout
-- [ ] Integrate Airbnb calendar widget/iframe
-- [ ] Add booking policies and rules section
+- [ ] Define `Review` and `ReviewSummary` types.
+- [ ] Create `src/data/reviews.ts` with summary + 6 reviews + provenance metadata.
+- [ ] Create ReviewCard component.
+- [ ] Design star rating + helper utilities (formatting averages, category scores).
+- [ ] Implement reviews grid/list layout fed by the data file.
+- [ ] Research generic calendar widget libraries (e.g., FullCalendar, react-big-calendar)
+- [ ] Implement iCal feed parser for Airbnb and VRBO availability data
+- [ ] Create booking page layout.
+- [ ] Integrate generic calendar widget with merged iCal data
+- [ ] Add booking policies and rules section populated from `propertyData.houseRules` and highlights.
+- [ ] Add links to Airbnb and VRBO listing pages for direct booking
+- **Definition of Done**: Reviews & Book pages pull all copy/stats from data modules; calendar displays combined availability from multiple iCal sources.
 
 #### Sprint 4: Contact & Forms (Week 3)
-- [ ] Design contact form layout
-- [ ] Implement client-side form validation
-- [ ] Add error messages and input states
-- [ ] Create success/failure message displays
-- [ ] Add FAQ section to contact page
-- [ ] Include social media links
-- [ ] Set up form submission handler
+- [ ] Design contact form layout.
+- [ ] Implement client-side form validation.
+- [ ] Add error messages and input states.
+- [ ] Create success/failure message displays.
+- [ ] Add FAQ section to contact page referencing `propertyData.houseRules` answers (pets, quiet hours, parking, check-in/out).
+- [ ] Include social media + host contact links from `propertyData.host`.
+- [ ] Set up form submission handler.
+- [ ] Share host/facts data with Footer + Layout for consistency.
+- **Definition of Done**: Contact + footer use shared host data; FAQs mirror `houseRules` content.
 
 **Deliverables**:
 - 📦 All 7 pages fully functional
@@ -465,16 +517,20 @@ src/
 - ✅ Clear call-to-action buttons
 
 ### Gallery
-- ✅ Grid layout (masonry or standard)
-- ✅ Lightbox for full-screen viewing
-- ✅ Image lazy loading
-- ✅ Touch/swipe gestures
-- ✅ Category filtering
+- ✅ Responsive grid layout (auto-adjusts to screen size)
+- ✅ Lightbox for full-screen viewing with close button
+- ✅ Image lazy loading for performance
+- ✅ Touch/swipe gestures support
+- ✅ Category filtering (8 categories: Living Room, Kitchen, Dining Area, Bedrooms, Bathrooms, Outdoor, Exterior, Activities, Additional)
+- ✅ 60+ high-quality images from Airbnb listing
+- ✅ Hover effects with caption overlays
+- ✅ TypeScript-based data structure
 
 ### Booking Integration
-- ✅ Airbnb calendar embed on Reserve page
+- ✅ Generic calendar widget with iCal feed support
+- ✅ Airbnb and VRBO calendar synchronization
 - ✅ Availability checker widget on homepage
-- ✅ Direct booking link
+- ✅ Links to booking platforms
 - ✅ Pricing information display
 
 ### Contact Form
@@ -503,6 +559,8 @@ src/
 - [ ] Lightbox opens/closes
 - [ ] Map is interactive
 - [ ] Booking widget displays
+- [ ] Data modules (`propertyData`, `amenities`, `reviews`) import without runtime errors and drive the corresponding pages end-to-end
+- [ ] Review provenance (`source`, `importedAt`) surfaces in the UI so users know data origin
 
 ### Responsive Testing
 - [ ] Mobile (320px - 767px)
