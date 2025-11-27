@@ -1,0 +1,386 @@
+[
+  {
+    "id": "living-1",
+    "category": "Living Room",
+    "alt": "Living room with couch, TV, and comfortable seating",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/03c7cba0-7a9b-48ba-9685-8bfba6aeec24.jpeg",
+    "localFileName": "living-1.jpeg",
+    "localPath": "public/gallery/living-1.jpeg"
+  },
+  {
+    "id": "living-2",
+    "category": "Living Room",
+    "alt": "Living room view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/8df486cf-4ba3-4f4b-a70b-d70ebb18e191.jpeg",
+    "localFileName": "living-2.jpeg",
+    "localPath": "public/gallery/living-2.jpeg"
+  },
+  {
+    "id": "living-3",
+    "category": "Living Room",
+    "alt": "Living room view 3",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/6ee744b6-9d22-4fca-9297-7dda6f89e202.jpeg",
+    "localFileName": "living-3.jpeg",
+    "localPath": "public/gallery/living-3.jpeg"
+  },
+  {
+    "id": "living-4",
+    "category": "Living Room",
+    "alt": "Living room with books and reading material",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/4a076f4c-3ef1-4846-81cb-beef4c9e47d8.jpeg",
+    "localFileName": "living-4.jpeg",
+    "localPath": "public/gallery/living-4.jpeg"
+  },
+  {
+    "id": "kitchen-1",
+    "category": "Kitchen",
+    "alt": "Full kitchen with modern appliances",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/fceabfce-03fa-44dd-aac8-1c17bc5882e6.jpeg",
+    "localFileName": "kitchen-1.jpeg",
+    "localPath": "public/gallery/kitchen-1.jpeg"
+  },
+  {
+    "id": "kitchen-2",
+    "category": "Kitchen",
+    "alt": "Full kitchen view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/1d68f796-d1c6-4cc0-b71c-9bd6d0ff3dfe.jpeg",
+    "localFileName": "kitchen-2.jpeg",
+    "localPath": "public/gallery/kitchen-2.jpeg"
+  },
+  {
+    "id": "kitchen-3",
+    "category": "Kitchen",
+    "alt": "Full kitchen view 3",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/bb7296e7-a212-4dc5-a1af-23c71b8cbb04.jpeg",
+    "localFileName": "kitchen-3.jpeg",
+    "localPath": "public/gallery/kitchen-3.jpeg"
+  },
+  {
+    "id": "kitchen-4",
+    "category": "Kitchen",
+    "alt": "Full kitchen view 4",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/65620159-1b33-4976-b27a-542a06a8254d.jpeg",
+    "localFileName": "kitchen-4.jpeg",
+    "localPath": "public/gallery/kitchen-4.jpeg"
+  },
+  {
+    "id": "dining-1",
+    "category": "Dining Area",
+    "alt": "Dining area with table and chairs",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/ec19afbb-d261-4989-b064-69933c9e0bc8.jpeg",
+    "localFileName": "dining-1.jpeg",
+    "localPath": "public/gallery/dining-1.jpeg"
+  },
+  {
+    "id": "dining-2",
+    "category": "Dining Area",
+    "alt": "Dining area view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/75fb8e86-92f9-4748-a0d4-c4914a9e23e2.jpeg",
+    "localFileName": "dining-2.jpeg",
+    "localPath": "public/gallery/dining-2.jpeg"
+  },
+  {
+    "id": "dining-3",
+    "category": "Dining Area",
+    "alt": "Dining area view 3",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/8fecb84a-ae2f-4ec2-9228-8b38a92b33d7.jpeg",
+    "localFileName": "dining-3.jpeg",
+    "localPath": "public/gallery/dining-3.jpeg"
+  },
+  {
+    "id": "dining-4",
+    "category": "Dining Area",
+    "alt": "Dining area view 4",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/b6deadcc-8d54-41d1-9315-0b8cb8b1d451.jpeg",
+    "localFileName": "dining-4.jpeg",
+    "localPath": "public/gallery/dining-4.jpeg"
+  },
+  {
+    "id": "bedroom-master-1",
+    "category": "Bedrooms",
+    "alt": "Master bedroom with new comfortable king mattress",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/38d939c6-3b38-492d-8da4-be8e8b70ef3c.jpeg",
+    "localFileName": "bedroom-master-1.jpeg",
+    "localPath": "public/gallery/bedroom-master-1.jpeg"
+  },
+  {
+    "id": "bedroom-master-2",
+    "category": "Bedrooms",
+    "alt": "Master bedroom view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/9e4139c9-fb5b-4bef-b250-2c62ddeedde8.jpeg",
+    "localFileName": "bedroom-master-2.jpeg",
+    "localPath": "public/gallery/bedroom-master-2.jpeg"
+  },
+  {
+    "id": "bedroom-master-3",
+    "category": "Bedrooms",
+    "alt": "Master bedroom",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/4124e7bb-c788-463e-ae3a-ba17e357c251.jpeg",
+    "localFileName": "bedroom-master-3.jpeg",
+    "localPath": "public/gallery/bedroom-master-3.jpeg"
+  },
+  {
+    "id": "bedroom-guest1",
+    "category": "Bedrooms",
+    "alt": "Guest bedroom",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTAzNzg3ODcwMzA2MzA4MTYxNw%3D%3D/original/4dc78591-b4f9-4c9b-9164-23e84a72d339.jpeg",
+    "localFileName": "bedroom-guest1.jpeg",
+    "localPath": "public/gallery/bedroom-guest1.jpeg"
+  },
+  {
+    "id": "bedroom-guest2-1",
+    "category": "Bedrooms",
+    "alt": "Downstairs guest room with new comfortable queen bed",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/b4047a67-9b79-4b37-a45e-7ce1e281c584.jpeg",
+    "localFileName": "bedroom-guest2-1.jpeg",
+    "localPath": "public/gallery/bedroom-guest2-1.jpeg"
+  },
+  {
+    "id": "bedroom-guest2-2",
+    "category": "Bedrooms",
+    "alt": "Guest bedroom view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/92022125-ccee-4fa4-b2af-4f87d0957371.jpeg",
+    "localFileName": "bedroom-guest2-2.jpeg",
+    "localPath": "public/gallery/bedroom-guest2-2.jpeg"
+  },
+  {
+    "id": "bedroom-bunk-1",
+    "category": "Bedrooms",
+    "alt": "Bunk room",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTAzNzg3ODcwMzA2MzA4MTYxNw%3D%3D/original/69fe5703-a6be-4a16-9ff3-aa6b8dee36ac.jpeg",
+    "localFileName": "bedroom-bunk-1.jpeg",
+    "localPath": "public/gallery/bedroom-bunk-1.jpeg"
+  },
+  {
+    "id": "bedroom-bunk-2",
+    "category": "Bedrooms",
+    "alt": "Twin-over-full bunk bed with trundle and comfortable memory foam mattresses",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/c06c4bae-440d-4da2-958f-5451b8a22299.jpeg",
+    "localFileName": "bedroom-bunk-2.jpeg",
+    "localPath": "public/gallery/bedroom-bunk-2.jpeg"
+  },
+  {
+    "id": "bedroom-bunk-3",
+    "category": "Bedrooms",
+    "alt": "Bunk room view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/f6630280-f92a-483a-a683-2aa746c744f8.jpeg",
+    "localFileName": "bedroom-bunk-3.jpeg",
+    "localPath": "public/gallery/bedroom-bunk-3.jpeg"
+  },
+  {
+    "id": "bathroom-master",
+    "category": "Bathrooms",
+    "alt": "Master bathroom",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/371c4cbe-24de-4b5f-80a3-3d257210fe09.jpeg",
+    "localFileName": "bathroom-master.jpeg",
+    "localPath": "public/gallery/bathroom-master.jpeg"
+  },
+  {
+    "id": "bathroom-guest1",
+    "category": "Bathrooms",
+    "alt": "Downstairs guest bathroom",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/b5282466-a387-4491-9450-fb3d6eb6d417.jpeg",
+    "localFileName": "bathroom-guest1.jpeg",
+    "localPath": "public/gallery/bathroom-guest1.jpeg"
+  },
+  {
+    "id": "bathroom-guest2",
+    "category": "Bathrooms",
+    "alt": "Upstairs guest bathroom with shower/tub",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/9c1eae56-5fc3-45ff-9cfc-b1cd6b29fc38.jpeg",
+    "localFileName": "bathroom-guest2.jpeg",
+    "localPath": "public/gallery/bathroom-guest2.jpeg"
+  },
+  {
+    "id": "outdoor-patio",
+    "category": "Outdoor",
+    "alt": "Patio area",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/0b185415-e60a-41e9-a46f-3cffd10464c8.jpeg",
+    "localFileName": "outdoor-patio.jpeg",
+    "localPath": "public/gallery/outdoor-patio.jpeg"
+  },
+  {
+    "id": "outdoor-deck",
+    "category": "Outdoor",
+    "alt": "Deck with outdoor seating",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/065e5dd2-337b-4d82-8db5-0dc55856d252.jpeg",
+    "localFileName": "outdoor-deck.jpeg",
+    "localPath": "public/gallery/outdoor-deck.jpeg"
+  },
+  {
+    "id": "outdoor-pet-area",
+    "category": "Outdoor",
+    "alt": "Pet relief area",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1037878703063081617/original/05c84f66-8e7d-445c-acdb-34abcde3a9a8.jpeg",
+    "localFileName": "outdoor-pet-area.jpeg",
+    "localPath": "public/gallery/outdoor-pet-area.jpeg"
+  },
+  {
+    "id": "laundry",
+    "category": "Amenities",
+    "alt": "Laundry area",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/ef25ff44-5d40-446e-8f30-f1720931fecf.jpeg",
+    "localFileName": "laundry.jpeg",
+    "localPath": "public/gallery/laundry.jpeg"
+  },
+  {
+    "id": "exterior-1",
+    "category": "Exterior",
+    "alt": "Exterior of property",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/4b993785-0421-4481-adaf-f172cd0d082e.jpeg",
+    "localFileName": "exterior-1.jpeg",
+    "localPath": "public/gallery/exterior-1.jpeg"
+  },
+  {
+    "id": "exterior-2",
+    "category": "Exterior",
+    "alt": "Exterior view 2",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/d9ab13c5-0c5a-4804-8628-1e3916fe3781.jpeg",
+    "localFileName": "exterior-2.jpeg",
+    "localPath": "public/gallery/exterior-2.jpeg"
+  },
+  {
+    "id": "exterior-3",
+    "category": "Exterior",
+    "alt": "Exterior view 3",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/44d570af-d96e-419f-ac7e-4c9fc75b9189.jpeg",
+    "localFileName": "exterior-3.jpeg",
+    "localPath": "public/gallery/exterior-3.jpeg"
+  },
+  {
+    "id": "exterior-4",
+    "category": "Exterior",
+    "alt": "Exterior view 4",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/474635d4-c9a5-473e-8c46-4a024651ee4d.jpeg",
+    "localFileName": "exterior-4.jpeg",
+    "localPath": "public/gallery/exterior-4.jpeg"
+  },
+  {
+    "id": "additional-1",
+    "category": "Additional",
+    "alt": "Property view",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/d994ea2f-3448-4903-b419-f0642faee087.jpeg",
+    "localFileName": "additional-1.jpeg",
+    "localPath": "public/gallery/additional-1.jpeg"
+  },
+  {
+    "id": "additional-2",
+    "category": "Additional",
+    "alt": "Property view",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/23b1fd36-0e3a-4e00-9bf0-4f9ffff1b139.jpeg",
+    "localFileName": "additional-2.jpeg",
+    "localPath": "public/gallery/additional-2.jpeg"
+  },
+  {
+    "id": "kayaks",
+    "category": "Activities",
+    "alt": "2 kayaks with life jackets and paddles",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/de937de2-ed9e-45e4-9eef-b7ee76ad9ced.jpeg",
+    "localFileName": "kayaks.jpeg",
+    "localPath": "public/gallery/kayaks.jpeg"
+  },
+  {
+    "id": "additional-4",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/7f7d2005-af03-4533-acae-e06e1a1886e6.jpeg",
+    "localFileName": "additional-4.jpeg",
+    "localPath": "public/gallery/additional-4.jpeg"
+  },
+  {
+    "id": "additional-5",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/50efa9dd-70a5-4c50-a874-eb827da78bc1.jpeg",
+    "localFileName": "additional-5.jpeg",
+    "localPath": "public/gallery/additional-5.jpeg"
+  },
+  {
+    "id": "additional-6",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/c7e212d7-154c-4127-a088-0a66175fb044.jpeg",
+    "localFileName": "additional-6.jpeg",
+    "localPath": "public/gallery/additional-6.jpeg"
+  },
+  {
+    "id": "additional-7",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/808cea19-bbfb-46d5-9e17-e17d5446b8e5.jpeg",
+    "localFileName": "additional-7.jpeg",
+    "localPath": "public/gallery/additional-7.jpeg"
+  },
+  {
+    "id": "additional-8",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/82c5e1da-4f74-44b8-b409-23152b5b870d.jpeg",
+    "localFileName": "additional-8.jpeg",
+    "localPath": "public/gallery/additional-8.jpeg"
+  },
+  {
+    "id": "additional-9",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/0c256c4d-1796-4f0e-a4f9-a1fd5295e216.jpeg",
+    "localFileName": "additional-9.jpeg",
+    "localPath": "public/gallery/additional-9.jpeg"
+  },
+  {
+    "id": "additional-10",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/miso/Hosting-1037878703063081617/original/20aaf3bf-712e-4e28-a5b7-4b2c4b67164e.jpeg",
+    "localFileName": "additional-10.jpeg",
+    "localPath": "public/gallery/additional-10.jpeg"
+  },
+  {
+    "id": "additional-11",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTAzNzg3ODcwMzA2MzA4MTYxNw%3D%3D/original/bf4a57b1-50e4-4e94-ad74-d7e407d8ac25.jpeg",
+    "localFileName": "additional-11.jpeg",
+    "localPath": "public/gallery/additional-11.jpeg"
+  },
+  {
+    "id": "additional-12",
+    "category": "Additional",
+    "alt": "Property amenity",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTAzNzg3ODcwMzA2MzA4MTYxNw%3D%3D/original/80f590a1-7662-4ef6-99b3-8d0c87eb23c3.jpeg",
+    "localFileName": "additional-12.jpeg",
+    "localPath": "public/gallery/additional-12.jpeg"
+  },
+  {
+    "id": "fishing",
+    "category": "Activities",
+    "alt": "One of our favorite guests always catches a ton of fish!",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1037878703063081617/original/58adf290-90dc-49dd-a660-aed545c2f8bb.jpeg",
+    "localFileName": "fishing.jpeg",
+    "localPath": "public/gallery/fishing.jpeg"
+  },
+  {
+    "id": "additional-14",
+    "category": "Additional",
+    "alt": "Property view",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1037878703063081617/original/b72d9df2-5ee1-4524-a773-a2d655b4a356.jpeg",
+    "localFileName": "additional-14.jpeg",
+    "localPath": "public/gallery/additional-14.jpeg"
+  },
+  {
+    "id": "additional-15",
+    "category": "Additional",
+    "alt": "Property view",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1037878703063081617/original/6651b46a-d287-4a8a-bca5-fecc37571a17.jpeg",
+    "localFileName": "additional-15.jpeg",
+    "localPath": "public/gallery/additional-15.jpeg"
+  },
+  {
+    "id": "additional-16",
+    "category": "Additional",
+    "alt": "Property view",
+    "sourceUrl": "https://a0.muscache.com/im/pictures/hosting/Hosting-1037878703063081617/original/a0a1edd7-f838-4d16-8021-5807d44b5a07.jpeg",
+    "localFileName": "additional-16.jpeg",
+    "localPath": "public/gallery/additional-16.jpeg"
+  }
+]
