@@ -17,9 +17,8 @@
   - No additional extensions required beyond VS Code defaults
 
 - [ ] Compile the Project
-  - Note: Current environment has Node.js v18.12.1, but Vite requires v20.19+ or v22.12+
-  - Upgrade Node.js to v20.19.0 or later before running dev/build commands
-  - After upgrading Node.js, run: `npm install` to ensure dependencies are properly built
+  - Environment now uses Node.js v24.11.1, which satisfies Vite's >=20.19 requirement
+  - Run `npm install` to ensure dependencies are up to date before `npm run dev`/`npm run build`
 
 - [ ] Create and Run Task
   - Ready to use `npm run dev` for development

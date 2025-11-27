@@ -98,28 +98,27 @@ export interface Amenities {
 
 export type AmenityCategory = keyof Amenities;
 
-// Reviews Types
+// Review Types
 export interface Review {
+  id: string;
   author: string;
   location: string;
-  rating: number;
+  rating: 1 | 2 | 3 | 4 | 5;
   date: string;
   stayDetails: string;
   text: string;
   source: string;
-  importedAt?: string;
 }
 
-export interface ReviewSummary {
+export interface ReviewStats {
   overallRating: number;
   totalReviews: number;
-  categoryRatings: {
-    cleanliness: number;
-    accuracy: number;
-    checkIn: number;
-    communication: number;
-    location: number;
-    value: number;
+  ratingBreakdown: {
+    5: number;
+    4: number;
+    3: number;
+    2: number;
+    1: number;
   };
 }
 
@@ -130,4 +129,27 @@ export interface PropertyData {
   host: HostInfo;
   locationDetails: LocationDetails;
   houseRules: HouseRules;
+}
+
+// Booking Types
+export interface BookingInfo {
+  airbnbUrl: string;
+  checkInTime: string;
+  checkOutTime: string;
+  minimumStay?: number;
+  maximumStay?: number;
+  instantBooking: boolean;
+  cancellationPolicy: string;
+}
+
+export interface PricingInfo {
+  note: string;
+  nightlyRate: string;
+  cleaningFee: string;
+  additionalNote: string;
+}
+
+export interface SafetyInfo {
+  devices: string[];
+  emergencyNumber: string;
 }
