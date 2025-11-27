@@ -58,6 +58,7 @@ A modern, responsive personal website built with React, TypeScript, and Vite, sh
    - Property owner information
    - Social media links
    - FAQ section
+   - **Email Configuration**: Forms will submit to `architect@pulseroi.com` but this email will not be exposed in the UI as a contact reference
 
 ### Data Integration Overview
 - **Shared Types**: `src/types/index.ts` defines the contracts (`PropertyInfo`, `HostInfo`, `HouseRules`, `Amenities`, `Review`, `ReviewSummary`, `LocationDetails`, etc.) that every page should consume. No feature work is “done” until it uses these types instead of inline shapes.
@@ -267,11 +268,12 @@ src/
 - [ ] Implement form validation.
 - [ ] Add error messages and states.
 - [ ] Create success message.
+- [ ] Configure form submission to send emails to `architect@pulseroi.com` (do not expose this email in the UI).
 - [ ] Add FAQ section, including automated answers driven by `propertyData.houseRules` (pets, quiet hours, parking).
 - [ ] Include social media + host contact links sourced from `propertyData.host`.
 - [ ] Set up form submission (mock or real).
 - [ ] Add a reusable Contact/Host info component so Layout/Footer pull from the same source of truth.
-- **Acceptance**: Contact page and footer reference `propertyData.host`; FAQs reference `houseRules` data.
+- **Acceptance**: Contact page and footer reference `propertyData.host`; FAQs reference `houseRules` data; form submissions routed to `architect@pulseroi.com` without displaying the email publicly.
 
 ### Sprint 6: Polish & Optimization (Week 4)
 - [ ] Add loading states
@@ -409,11 +411,12 @@ src/
 - [ ] Implement client-side form validation.
 - [ ] Add error messages and input states.
 - [ ] Create success/failure message displays.
+- [ ] Configure form submission to `architect@pulseroi.com` (backend/email service integration - email address should NOT be exposed in UI).
 - [ ] Add FAQ section to contact page referencing `propertyData.houseRules` answers (pets, quiet hours, parking, check-in/out).
 - [ ] Include social media + host contact links from `propertyData.host`.
 - [ ] Set up form submission handler.
 - [ ] Share host/facts data with Footer + Layout for consistency.
-- **Definition of Done**: Contact + footer use shared host data; FAQs mirror `houseRules` content.
+- **Definition of Done**: Contact + footer use shared host data; FAQs mirror `houseRules` content; form emails are sent to `architect@pulseroi.com` without exposing the email address publicly.
 
 **Deliverables**:
 - 📦 All 7 pages fully functional
