@@ -48,10 +48,18 @@ Propane grill available for use on the back deck. Underwater light to enjoy rela
   host: {
     name: 'Gordon',
     status: 'Superhost',
+    isSuperhost: true,
     yearsHosting: 4,
     overallRating: 4.88,
     totalReviews: 41,
     guestFavorite: true,
+    responseTime: 'Within an hour',
+    responseRate: '100%',
+    socialLinks: [
+      { platform: 'airbnb', url: 'https://www.airbnb.com/h/pelicansplace', icon: 'FaAirbnb' },
+      { platform: 'instagram', url: 'https://www.instagram.com/pelicansplacecoast', icon: 'FaInstagram' },
+      { platform: 'facebook', url: 'https://www.facebook.com/pelicansplacecoast', icon: 'FaFacebook' },
+    ],
   },
   locationDetails: {
     city: 'Corpus Christi',
@@ -65,16 +73,21 @@ Propane grill available for use on the back deck. Underwater light to enjoy rela
     ],
   },
   houseRules: {
-    checkIn: 'After 4:00 PM',
-    checkOut: 'Before 10:00 AM',
+    checkInTime: 'After 4:00 PM',
+    checkOutTime: 'Before 10:00 AM',
     checkInMethod: 'Self check-in with smart lock',
-    duringYourStay: {
-      maxGuests: 8,
-      petsAllowed: true,
-      maxPets: 2,
-      quietHours: '10:00 PM - 7:00 AM',
-      restrictions: ['No parties or events', 'No commercial photography', 'No smoking'],
-    },
+    minimumStay: 2,
+    maximumStay: 28,
+    quietHours: '10:00 PM - 7:00 AM',
+    maxGuests: 8,
+    petsAllowed: true,
+    maxPets: 2,
+    smokingAllowed: false,
+    eventsAllowed: false,
+    childrenAllowed: true,
+    parking:
+      'Driveway parking for two vehicles (larger trucks/SUVs may need to stagger when neighbors have guests).',
+    restrictions: ['No parties or large events', 'No commercial photography', 'No smoking indoors'],
     additionalRules: [
       'Gather dishes and start dishwasher when you leave',
       'Start a load of towels in washing machine',
@@ -100,11 +113,11 @@ export const getHostInfo = () => propertyData.host;
 export const getLocationDetails = () => propertyData.locationDetails;
 export const getHouseRules = () => propertyData.houseRules;
 export const getCheckInInfo = () => ({
-  checkIn: propertyData.houseRules.checkIn,
-  checkOut: propertyData.houseRules.checkOut,
+  checkIn: propertyData.houseRules.checkInTime,
+  checkOut: propertyData.houseRules.checkOutTime,
   method: propertyData.houseRules.checkInMethod,
 });
 export const getPetPolicy = () => ({
-  allowed: propertyData.houseRules.duringYourStay.petsAllowed,
-  maxPets: propertyData.houseRules.duringYourStay.maxPets,
+  allowed: propertyData.houseRules.petsAllowed,
+  maxPets: propertyData.houseRules.maxPets,
 });

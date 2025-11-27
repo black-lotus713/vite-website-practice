@@ -1,0 +1,115 @@
+.host-info-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+  border: 1px solid #f3f4f6;
+}
+
+.host-info-card__header h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.host-info-card__name-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.host-info-card__name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.host-info-card__tenure {
+  color: #6b7280;
+  margin: 0.2rem 0 0;
+}
+
+.host-info-card__superhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: #ff385c;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.host-info-card__stats {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.host-info-card__stat {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #f9fafb;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+}
+
+.host-info-card__stat-icon {
+  font-size: 1.4rem;
+  color: #f59e0b;
+}
+
+.host-info-card__stat-label {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.host-info-card__stat-value {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.host-info-card__details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #4b5563;
+}
+
+.host-info-card__details li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.host-info-card__details svg {
+  color: #6d28d9;
+}
+
+.host-info-card__footer {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .host-info-card {
+    padding: 1.5rem;
+  }
+
+  .host-info-card__stats {
+    flex-direction: column;
+  }
+}

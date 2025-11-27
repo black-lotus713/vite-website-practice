@@ -35,14 +35,24 @@ export interface Highlight {
   icon?: string;
 }
 
+export interface SocialMediaLink {
+  platform: 'facebook' | 'instagram' | 'twitter' | 'linkedin' | 'airbnb' | 'vrbo';
+  url: string;
+  icon?: string;
+}
+
 // Host Information
 export interface HostInfo {
   name: string;
   status: string;
+  isSuperhost?: boolean;
   yearsHosting: number;
   overallRating: number;
   totalReviews: number;
   guestFavorite: boolean;
+  responseTime?: string;
+  responseRate?: string;
+  socialLinks?: SocialMediaLink[];
 }
 
 // Location Details
@@ -60,16 +70,20 @@ export interface LocationDetails {
 
 // House Rules
 export interface HouseRules {
-  checkIn: string;
-  checkOut: string;
+  checkInTime: string;
+  checkOutTime: string;
   checkInMethod: string;
-  duringYourStay: {
-    maxGuests: number;
-    petsAllowed: boolean;
-    maxPets?: number;
-    quietHours: string;
-    restrictions: string[];
-  };
+  minimumStay: number;
+  maximumStay?: number;
+  quietHours?: string;
+  maxGuests: number;
+  petsAllowed: boolean;
+  maxPets?: number;
+  smokingAllowed: boolean;
+  eventsAllowed: boolean;
+  childrenAllowed: boolean;
+  parking?: string;
+  restrictions: string[];
   additionalRules: string[];
   beforeYouLeave: string[];
   cleaningNote?: string;
@@ -152,4 +166,37 @@ export interface PricingInfo {
 export interface SafetyInfo {
   devices: string[];
   emergencyNumber: string;
+}
+
+// Contact & FAQ Types
+export interface ContactFormData {
+  name: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+}
+
+export interface ContactFormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  subject?: string;
+  message?: string;
+}
+
+export type FormSubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
+
+export interface FAQItem {
+  id: string;
+  question: string;
+  answer: string;
+  category?: 'booking' | 'property' | 'policies' | 'general';
+}
+
+export interface ContactConfig {
+  recipientEmail: string;
+  emailServiceEndpoint?: string;
+  maxMessageLength: number;
+  requiredFields: Array<keyof ContactFormData>;
 }

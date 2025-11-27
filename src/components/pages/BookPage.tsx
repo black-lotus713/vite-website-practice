@@ -91,8 +91,8 @@ const BookPage = () => {
               icon={<FaClock />}
               title="Check-in & Check-out"
               items={[
-                `Check-in: ${houseRules.checkIn}`,
-                `Check-out: ${houseRules.checkOut}`,
+                `Check-in: ${houseRules.checkInTime}`,
+                `Check-out: ${houseRules.checkOutTime}`,
                 houseRules.checkInMethod,
               ]}
               variant="info"
@@ -102,13 +102,13 @@ const BookPage = () => {
               icon={<FaDoorOpen />}
               title="During Your Stay"
               items={[
-                `Maximum ${houseRules.duringYourStay.maxGuests} guests`,
-                houseRules.duringYourStay.petsAllowed
-                  ? houseRules.duringYourStay.maxPets
-                    ? `Pets allowed (max ${houseRules.duringYourStay.maxPets})`
+                `Maximum ${houseRules.maxGuests} guests`,
+                houseRules.petsAllowed
+                  ? houseRules.maxPets
+                    ? `Pets allowed (max ${houseRules.maxPets})`
                     : 'Pets allowed'
                   : 'No pets allowed',
-                `Quiet hours: ${houseRules.duringYourStay.quietHours}`,
+                houseRules.quietHours ? `Quiet hours: ${houseRules.quietHours}` : 'Please respect our quiet hours',
               ]}
               variant="success"
             />
@@ -116,7 +116,7 @@ const BookPage = () => {
             <HouseRulesCard
               icon={<FaBan />}
               title="Restrictions"
-              items={houseRules.duringYourStay.restrictions}
+              items={houseRules.restrictions}
               variant="danger"
             />
 

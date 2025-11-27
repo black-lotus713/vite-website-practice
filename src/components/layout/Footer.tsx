@@ -1,9 +1,22 @@
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter, FaAirbnb, FaLinkedin, FaHome } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
 import './Footer.css';
+import { propertyData } from '../../data/propertyData';
+import type { SocialMediaLink } from '../../types';
+
+const iconMap: Record<SocialMediaLink['platform'], IconType> = {
+  facebook: FaFacebook,
+  instagram: FaInstagram,
+  twitter: FaTwitter,
+  linkedin: FaLinkedin,
+  airbnb: FaAirbnb,
+  vrbo: FaHome,
+};
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { propertyInfo, host } = propertyData;
 
   return (
     <footer className="footer">
@@ -28,26 +41,33 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <h3>Connect With Us</h3>
+          <h3>Connect</h3>
           <div className="social-links">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FaFacebook />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <FaInstagram />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <FaTwitter />
-            </a>
-            <a href="mailto:info@example.com" aria-label="Email">
-              <FaEnvelope />
-            </a>
+            {host.socialLinks?.map((link) => {
+              const Icon = iconMap[link.platform];
+              if (!Icon) {
+                return null;
+              }
+              return (
+                <a
+                  key={link.platform}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.platform}
+                >
+                  <Icon />
+                </a>
+              );
+            })}
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {currentYear} Property Name. All rights reserved.</p>
+        <p>
+          &copy; {currentYear} {propertyInfo.subtitle || propertyInfo.title}. All rights reserved.
+        </p>
       </div>
     </footer>
   );

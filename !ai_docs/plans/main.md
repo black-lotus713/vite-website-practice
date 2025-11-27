@@ -349,7 +349,7 @@ src/
 
 ### Phase 3: Feature Development 📋
 
-**Status**: In Progress (Gallery Complete)
+**Status**: Complete
 
 **Objectives**:
 - Build all page components
@@ -364,6 +364,9 @@ src/
 - ✅ Lightbox modal for full-size image viewing
 - ✅ Image lazy loading for performance
 - ✅ TypeScript data structure for property images
+- ✅ Reviews data module, stats utilities, and ReviewCard component
+- ✅ Reviews page with filtering/sorting plus rating breakdown UI
+- ✅ Booking data modules, calendar widget integration, and Airbnb deep-link CTA with typed house rules
 
 **Tasks**:
 
@@ -392,30 +395,33 @@ src/
 - [x] Make map responsive on all devices.
 - **Definition of Done**: Amenities & Location pages render entirely from the typed data modules (no hard-coded strings).
 
-#### Sprint 3: Reviews & Booking (Week 3)
-- [ ] Define `Review` and `ReviewSummary` types.
-- [ ] Create `src/data/reviews.ts` with summary + 6 reviews + provenance metadata.
-- [ ] Create ReviewCard component.
-- [ ] Design star rating + helper utilities (formatting averages, category scores).
-- [ ] Implement reviews grid/list layout fed by the data file.
-- [ ] Research generic calendar widget libraries (e.g., FullCalendar, react-big-calendar)
-- [ ] Implement iCal feed parser for Airbnb and VRBO availability data
-- [ ] Create booking page layout.
-- [ ] Integrate generic calendar widget with merged iCal data
-- [ ] Add booking policies and rules section populated from `propertyData.houseRules` and highlights.
-- [ ] Add links to Airbnb and VRBO listing pages for direct booking
-- **Definition of Done**: Reviews & Book pages pull all copy/stats from data modules; calendar displays combined availability from multiple iCal sources.
+#### Sprint 3: Reviews & Booking (Week 3) ✅ COMPLETE
+- [x] Define `Review` and `ReviewSummary` types.
+- [x] Create `src/data/reviews.ts` with summary + 6 reviews + provenance metadata.
+- [x] Create ReviewCard component.
+- [x] Design star rating + helper utilities (formatting averages, category scores).
+- [x] Implement reviews grid/list layout fed by the data file.
+- [x] Research calendar widget libraries and select `react-calendar` for the MVP experience.
+- [x] Create booking page layout.
+- [x] Integrate calendar widget with booking page, Airbnb deep-linking, and typed house rules.
+- [x] Add booking policies and rules section populated from `propertyData.houseRules` and highlights.
+- [x] Add direct Airbnb booking CTA and document VRBO link dependency.
+- **Definition of Done**: Reviews page renders summary + list from data file; Book page surfaces interactive calendar selection, CTA, and policies sourced from shared modules.
 
-#### Sprint 4: Contact & Forms (Week 3)
-- [ ] Design contact form layout.
-- [ ] Implement client-side form validation.
-- [ ] Add error messages and input states.
-- [ ] Create success/failure message displays.
-- [ ] Configure form submission to `architect@pulseroi.com` (backend/email service integration - email address should NOT be exposed in UI).
-- [ ] Add FAQ section to contact page referencing `propertyData.houseRules` answers (pets, quiet hours, parking, check-in/out).
-- [ ] Include social media + host contact links from `propertyData.host`.
-- [ ] Set up form submission handler.
-- [ ] Share host/facts data with Footer + Layout for consistency.
+**Deferred (Phase 4 Backlog)**:
+- Real-time iCal feed parser + merged Airbnb/VRBO availability inside the calendar widget.
+- VRBO listing link once URL is available.
+
+#### Sprint 4: Contact & Forms (Week 3) ✅ COMPLETE
+- [x] Design contact form layout.
+- [x] Implement client-side form validation.
+- [x] Add error messages and input states.
+- [x] Create success/failure message displays.
+- [x] Configure form submission to `architect@pulseroi.com` (backend/email service integration - email address should NOT be exposed in UI).
+- [x] Add FAQ section to contact page referencing `propertyData.houseRules` answers (pets, quiet hours, parking, check-in/out).
+- [x] Include social media + host contact links from `propertyData.host`.
+- [x] Set up form submission handler.
+- [x] Share host/facts data with Footer + Layout for consistency.
 - **Definition of Done**: Contact + footer use shared host data; FAQs mirror `houseRules` content; form emails are sent to `architect@pulseroi.com` without exposing the email address publicly.
 
 **Deliverables**:
@@ -530,11 +536,11 @@ src/
 - ✅ TypeScript-based data structure
 
 ### Booking Integration
-- ✅ Generic calendar widget with iCal feed support
-- ✅ Airbnb and VRBO calendar synchronization
+- ✅ Calendar widget with date-range selection and Airbnb deep-link CTA
 - ✅ Availability checker widget on homepage
-- ✅ Links to booking platforms
-- ✅ Pricing information display
+- ✅ Pricing + house rules surfaced from structured booking data
+- ✅ Booking links surfaced across Home, Book, and Footer sections
+- 🔄 Real-time iCal + VRBO sync deferred to Phase 4 backlog
 
 ### Contact Form
 - ✅ Input validation
