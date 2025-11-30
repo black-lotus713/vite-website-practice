@@ -5,7 +5,7 @@
 .property-description h2 {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
+  color: var(--color-gulf-navy);
 }
 
 .description-content {
@@ -13,7 +13,7 @@
 }
 
 .description-text {
-  color: #555;
+  color: var(--color-text-dark-80);
   font-size: 1rem;
   line-height: 1.7;
   white-space: pre-wrap;
@@ -23,7 +23,7 @@
 .show-more-btn {
   background: none;
   border: none;
-  color: #007bff;
+  color: var(--color-sunset-orange);
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -33,5 +33,5 @@
 }
 
 .show-more-btn:hover {
-  color: #0056b3;
+  color: var(--color-sunset-orange-hover);
 }

@@ -3,24 +3,26 @@
   align-items: flex-start;
   gap: 0.75rem;
   padding: 0.75rem;
-  background-color: #fff;
-  border-radius: 6px;
-  transition: background-color 0.2s ease;
+  background-color: var(--surface-panel);
+  border-radius: 10px;
+  border: 1px solid var(--border-soft);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .amenity-card:hover {
-  background-color: #f8f9fa;
+  background-color: var(--color-shell-white);
+  box-shadow: 0 10px 18px rgba(13, 59, 102, 0.1);
 }
 
 .amenity-check {
-  color: #28a745;
+  color: var(--color-beach-green);
   font-size: 1rem;
   flex-shrink: 0;
   margin-top: 0.125rem;
 }
 
 .amenity-name {
-  color: #333;
+  color: var(--color-text-dark);
   font-size: 0.95rem;
   line-height: 1.4;
 }

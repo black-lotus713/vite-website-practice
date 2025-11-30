@@ -1,8 +1,9 @@
 .calendar-widget {
-  background: white;
-  border-radius: 12px;
+  background: var(--surface-panel);
+  border-radius: 14px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 26px rgba(13, 59, 102, 0.12);
+  border: 1px solid var(--border-soft);
 }
 
 .calendar-widget__header {
@@ -12,13 +13,13 @@
 .calendar-widget__header h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-gulf-navy);
   margin: 0 0 0.5rem 0;
 }
 
 .calendar-widget__note {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -29,34 +30,34 @@
 }
 
 .calendar-widget__calendar .react-calendar__tile--active {
-  background: #007bff;
-  color: white;
+  background: var(--color-sunset-orange);
+  color: var(--color-white);
 }
 
 .calendar-widget__calendar .react-calendar__tile--active:hover {
-  background: #0056b3;
+  background: var(--color-sunset-orange-hover);
 }
 
 .calendar-widget__calendar .react-calendar__tile--rangeStart,
 .calendar-widget__calendar .react-calendar__tile--rangeEnd {
-  background: #007bff;
-  color: white;
+  background: var(--color-sunset-orange);
+  color: var(--color-white);
 }
 
 .calendar-widget__calendar .react-calendar__tile--range {
-  background: rgba(0, 123, 255, 0.1);
-  color: #333;
+  background: rgba(242, 92, 5, 0.15);
+  color: var(--color-text-dark);
 }
 
 .calendar-widget__calendar .react-calendar__tile:disabled {
-  background-color: #f0f0f0;
-  color: #ccc;
+  background-color: rgba(13, 59, 102, 0.05);
+  color: rgba(23, 32, 42, 0.4);
 }
 
 .calendar-widget__selection {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-soft);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -70,12 +71,12 @@
 
 .calendar-widget__label {
   font-weight: 600;
-  color: #555;
+  color: var(--color-text-dark);
 }
 
 .calendar-widget__value {
-  color: #007bff;
-  font-weight: 500;
+  color: var(--color-sunset-orange);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

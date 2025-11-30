@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './PageStyles.css';
+import './GalleryPage.css';
 import { propertyImages, getCategories, getImagesByCategory } from '../../data/propertyImages';
 
 const GalleryPage = () => {
@@ -19,28 +20,13 @@ const GalleryPage = () => {
       </p>
 
       {/* Category Filter */}
-      <div style={{ 
-        display: 'flex', 
-        gap: '8px', 
-        flexWrap: 'wrap', 
-        marginBottom: '2rem',
-        justifyContent: 'center'
-      }}>
+      <div className="gallery-page__filters">
         {categories.map(category => (
           <button
             key={category}
+            type="button"
             onClick={() => setSelectedCategory(category)}
-            style={{
-              padding: '8px 16px',
-              border: '1px solid #ddd',
-              borderRadius: '20px',
-              background: selectedCategory === category ? '#0066cc' : 'white',
-              color: selectedCategory === category ? 'white' : '#333',
-              cursor: 'pointer',
-              fontSize: '14px',
-              fontWeight: selectedCategory === category ? '600' : '400',
-              transition: 'all 0.2s'
-            }}
+            className={`gallery-page__filter-btn ${selectedCategory === category ? 'is-active' : ''}`}
           >
             {category}
           </button>
@@ -48,60 +34,20 @@ const GalleryPage = () => {
       </div>
 
       {/* Image Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-        gap: '16px',
-        marginBottom: '2rem'
-      }}>
+      <div className="gallery-page__grid">
         {displayedImages.map(image => (
           <div
             key={image.id}
+            className="gallery-card"
             onClick={() => setSelectedImage(image.url)}
-            style={{
-              cursor: 'pointer',
-              borderRadius: '8px',
-              overflow: 'hidden',
-              aspectRatio: '4/3',
-              position: 'relative',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              transition: 'transform 0.2s, box-shadow 0.2s'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-            }}
           >
             <img
               src={image.url}
               alt={image.alt}
               loading="lazy"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
             />
             {image.alt && (
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
-                color: 'white',
-                padding: '12px',
-                fontSize: '13px',
-                opacity: 0,
-                transition: 'opacity 0.2s'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.opacity = '1'}
-              onMouseLeave={(e) => e.currentTarget.style.opacity = '0'}
-              >
+              <div className="gallery-card__caption">
                 {image.alt}
               </div>
             )}
@@ -112,51 +58,20 @@ const GalleryPage = () => {
       {/* Lightbox */}
       {selectedImage && (
         <div
+          className="gallery-lightbox"
           onClick={() => setSelectedImage(null)}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0,0,0,0.9)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            padding: '20px',
-            cursor: 'pointer'
-          }}
         >
           <button
+            type="button"
+            className="gallery-lightbox__close"
             onClick={() => setSelectedImage(null)}
-            style={{
-              position: 'absolute',
-              top: '20px',
-              right: '20px',
-              background: 'white',
-              border: 'none',
-              borderRadius: '50%',
-              width: '40px',
-              height: '40px',
-              fontSize: '24px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              zIndex: 1001
-            }}
           >
             ×
           </button>
           <img
             src={selectedImage}
             alt="Full size"
-            style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-              objectFit: 'contain'
-            }}
+            className="gallery-lightbox__image"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

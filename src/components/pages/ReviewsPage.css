@@ -14,24 +14,24 @@
 .reviews-page__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #222222;
+  color: var(--color-gulf-navy);
   margin: 0 0 16px 0;
 }
 
 .reviews-page__subtitle {
   font-size: 1.2rem;
-  color: #717171;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
 /* Stats Section */
 .reviews-page__stats {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--color-gulf-navy), var(--color-sky-blue));
   color: #ffffff;
   border-radius: 16px;
   padding: 40px;
   margin-bottom: 48px;
-  box-shadow: 0 4px 20px rgba(0, 102, 204, 0.2);
+  box-shadow: 0 25px 45px var(--color-sky-blue-shadow);
 }
 
 .reviews-page__stats-content {
@@ -102,7 +102,7 @@
 }
 
 .reviews-page__breakdown-fill {
-  background: #ffffff;
+  background: var(--color-golden-yellow);
   height: 100%;
   border-radius: 4px;
   transition: width 0.5s ease;
@@ -125,27 +125,27 @@
 .reviews-page__filter-label {
   font-size: 1rem;
   font-weight: 600;
-  color: #222222;
+  color: var(--color-gulf-navy);
 }
 
 .reviews-page__filter-select {
   padding: 10px 16px;
-  border: 2px solid #e0e0e0;
+  border: 1px solid var(--border-soft);
   border-radius: 8px;
   font-size: 1rem;
-  background: #ffffff;
+  background: var(--surface-panel);
   cursor: pointer;
   transition: border-color 0.3s ease;
 }
 
 .reviews-page__filter-select:hover {
-  border-color: #0066cc;
+  border-color: var(--color-sky-blue);
 }
 
 .reviews-page__filter-select:focus {
   outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+  border-color: var(--color-sunset-orange);
+  box-shadow: 0 0 0 3px rgba(242, 92, 5, 0.15);
 }
 
 /* Reviews List */
@@ -156,14 +156,14 @@
 .reviews-page__count {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #222222;
+  color: var(--color-gulf-navy);
   margin: 0 0 24px 0;
 }
 
 .reviews-page__empty {
   text-align: center;
   padding: 60px 24px;
-  color: #717171;
+  color: var(--color-text-muted);
 }
 
 .reviews-page__empty-icon {

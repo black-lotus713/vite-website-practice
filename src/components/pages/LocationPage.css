@@ -7,7 +7,7 @@
 }
 
 .location-info {
-  background-color: #f8f9fa;
+  background-color: var(--color-shell-white);
   padding: 2rem;
   border-radius: 8px;
 }
@@ -17,15 +17,15 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background-color: #007bff;
-  color: white;
+  background-color: var(--color-gulf-navy);
+  color: var(--color-white);
   border-radius: 20px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .location-description {
-  color: #555;
+  color: var(--color-text-dark-80);
   font-size: 1.1rem;
   margin: 1rem 0 0 0;
 }
@@ -40,11 +40,11 @@
   gap: 0.75rem;
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
+  color: var(--color-gulf-navy);
 }
 
 .section-icon {
-  color: #007bff;
+  color: var(--color-sunset-orange);
 }
 
 .attractions-grid {
@@ -58,20 +58,21 @@
   align-items: center;
   gap: 1rem;
   padding: 1.25rem;
-  background-color: #fff;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  background-color: var(--surface-panel);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 24px rgba(13, 59, 102, 0.08);
 }
 
 .attraction-card:hover {
-  border-color: #007bff;
+  border-color: var(--color-sky-blue);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+  box-shadow: 0 18px 34px rgba(63, 167, 214, 0.2);
 }
 
 .attraction-icon {
-  color: #007bff;
+  color: var(--color-gulf-navy);
   font-size: 1.5rem;
   flex-shrink: 0;
 }
@@ -87,36 +88,40 @@
 }
 
 .map-placeholder {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-map);
   border-radius: 12px;
   padding: 4rem 2rem;
   text-align: center;
   margin-bottom: 1rem;
+  color: var(--color-gulf-navy);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 20px 40px var(--color-sky-blue-shadow);
 }
 
 .map-content {
-  color: white;
+  color: var(--color-gulf-navy);
 }
 
 .map-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
-  opacity: 0.9;
+  color: var(--color-gulf-navy);
 }
 
 .map-text {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0 0 0.5rem 0;
+  color: var(--color-gulf-navy);
 }
 
 .map-subtext {
   margin: 0;
-  opacity: 0.9;
+  color: var(--color-text-dark-80);
 }
 
 .map-note {
-  color: #666;
+  color: var(--color-text-muted);
   font-size: 0.95rem;
   font-style: italic;
   margin: 0;
@@ -125,7 +130,7 @@
 .area-info h2 {
   font-size: 1.75rem;
   margin-bottom: 1.5rem;
-  color: #2c3e50;
+  color: var(--color-gulf-navy);
 }
 
 .info-cards {
@@ -136,20 +141,20 @@
 
 .info-card {
   padding: 1.5rem;
-  background-color: #f8f9fa;
+  background-color: var(--surface-panel);
   border-radius: 8px;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid var(--color-gulf-navy);
 }
 
 .info-card h3 {
   margin: 0 0 0.75rem 0;
-  color: #2c3e50;
+  color: var(--color-gulf-navy);
   font-size: 1.125rem;
 }
 
 .info-card p {
   margin: 0;
-  color: #666;
+  color: var(--color-text-dark-80);
   line-height: 1.6;
 }
 

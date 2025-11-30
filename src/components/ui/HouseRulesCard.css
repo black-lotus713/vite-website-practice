@@ -1,31 +1,31 @@
 .house-rules-card {
-  background: white;
-  border-radius: 12px;
+  background: var(--surface-panel);
+  border-radius: 14px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-left: 4px solid #007bff;
+  box-shadow: 0 12px 26px rgba(13, 59, 102, 0.1);
+  border-left: 4px solid var(--color-gulf-navy);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .house-rules-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 20px 32px rgba(13, 59, 102, 0.18);
 }
 
 .house-rules-card--info {
-  border-left-color: #007bff;
+  border-left-color: var(--color-gulf-navy);
 }
 
 .house-rules-card--success {
-  border-left-color: #28a745;
+  border-left-color: var(--color-beach-green);
 }
 
 .house-rules-card--warning {
-  border-left-color: #ffc107;
+  border-left-color: var(--color-golden-yellow);
 }
 
 .house-rules-card--danger {
-  border-left-color: #dc3545;
+  border-left-color: var(--color-sunset-orange);
 }
 
 .house-rules-card__header {
@@ -41,25 +41,25 @@
 }
 
 .house-rules-card--info .house-rules-card__icon {
-  color: #007bff;
+  color: var(--color-gulf-navy);
 }
 
 .house-rules-card--success .house-rules-card__icon {
-  color: #28a745;
+  color: var(--color-beach-green);
 }
 
 .house-rules-card--warning .house-rules-card__icon {
-  color: #ffc107;
+  color: var(--color-golden-yellow);
 }
 
 .house-rules-card--danger .house-rules-card__icon {
-  color: #dc3545;
+  color: var(--color-sunset-orange);
 }
 
 .house-rules-card__title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #333;
+  color: var(--color-gulf-navy);
   margin: 0;
 }
 
@@ -71,9 +71,9 @@
 
 .house-rules-card__item {
   padding: 0.5rem 0;
-  color: #555;
+  color: var(--color-text-dark-80);
   line-height: 1.5;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-soft);
 }
 
 .house-rules-card__item:last-child {
@@ -82,7 +82,7 @@
 
 .house-rules-card__item::before {
   content: '•';
-  color: #007bff;
+  color: var(--color-gulf-navy);
   font-weight: bold;
   display: inline-block;
   width: 1em;
@@ -90,15 +90,15 @@
 }
 
 .house-rules-card--danger .house-rules-card__item::before {
-  color: #dc3545;
+  color: var(--color-sunset-orange);
 }
 
 .house-rules-card--success .house-rules-card__item::before {
-  color: #28a745;
+  color: var(--color-beach-green);
 }
 
 .house-rules-card--warning .house-rules-card__item::before {
-  color: #ffc107;
+  color: var(--color-golden-yellow);
 }
 
 @media (max-width: 768px) {
