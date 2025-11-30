@@ -88,17 +88,6 @@
   margin: 0;
 }
 
-.review-card__text--expanded {
-  display: block;
-}
-
-.review-card__text--collapsed {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 .review-card__read-more {
   background: none;
   border: none;

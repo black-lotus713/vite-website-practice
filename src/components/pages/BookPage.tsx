@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaClock, FaDoorOpen, FaDoorClosed, FaPaw, FaBan, FaCheckCircle } from 'react-icons/fa';
+import { FaClock, FaDoorOpen, FaPaw, FaBan } from 'react-icons/fa';
 import CalendarWidget from '../ui/CalendarWidget';
 import HouseRulesCard from '../ui/HouseRulesCard';
 import { getBookingInfo, getPricingInfo } from '../../data/bookingData';
@@ -118,20 +118,6 @@ const BookPage = () => {
               title="Restrictions"
               items={houseRules.restrictions}
               variant="danger"
-            />
-
-            <HouseRulesCard
-              icon={<FaCheckCircle />}
-              title="Please Remember"
-              items={houseRules.additionalRules}
-              variant="warning"
-            />
-
-            <HouseRulesCard
-              icon={<FaDoorClosed />}
-              title="Before You Leave"
-              items={houseRules.beforeYouLeave}
-              variant="info"
             />
 
             {houseRules.cleaningNote && (

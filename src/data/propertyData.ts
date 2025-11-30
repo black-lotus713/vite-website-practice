@@ -2,7 +2,7 @@ import type { PropertyData } from '../types';
 
 export const propertyData: PropertyData = {
   propertyInfo: {
-    title: 'Beach|Relax|Kayak|Nature|FishLight|Waterfront',
+    title: 'Your Bay-to-Beach Haven on the Texas Coast',
     subtitle: "Pelican's Place",
     location: 'Corpus Christi, Texas, United States',
     description: `Beautiful waterfront home ideally located at the edge of the Laguna Madre Bay. Quiet getaway near nature and wildlife. Close to beach and local attractions but nestled in a peaceful location.

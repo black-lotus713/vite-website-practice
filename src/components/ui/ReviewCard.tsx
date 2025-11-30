@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { FaStar, FaRegStar, FaUserFriends, FaDog, FaChild } from 'react-icons/fa';
 import type { Review } from '../../types';
 import { getStarArray } from '../../utils/ratingUtils';
@@ -8,10 +8,29 @@ interface ReviewCardProps {
   review: Review;
 }
 
+const PREVIEW_CHAR_LIMIT = 320;
+
+const buildPreviewText = (text: string) => {
+  if (text.length <= PREVIEW_CHAR_LIMIT) {
+    return {
+      previewText: text,
+      isTrimmed: false
+    };
+  }
+
+  const lastSpace = text.lastIndexOf(' ', PREVIEW_CHAR_LIMIT);
+  const cutIndex = lastSpace > PREVIEW_CHAR_LIMIT - 40 ? lastSpace : PREVIEW_CHAR_LIMIT;
+  return {
+    previewText: `${text.slice(0, cutIndex).trimEnd()}…`,
+    isTrimmed: true
+  };
+};
+
 const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const stars = getStarArray(review.rating);
-  const shouldShowReadMore = review.text.length > 200;
+  const { previewText, isTrimmed } = useMemo(() => buildPreviewText(review.text), [review.text]);
+  const displayedText = isExpanded || !isTrimmed ? review.text : previewText;
 
   const getStayIcon = () => {
     const stayLower = review.stayDetails.toLowerCase();
@@ -46,15 +65,16 @@ const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
         </span>
       </div>
 
-      <p className={`review-card__text ${isExpanded ? 'review-card__text--expanded' : 'review-card__text--collapsed'}`}>
-        {review.text}
+      <p className="review-card__text">
+        {displayedText}
       </p>
 
-      {shouldShowReadMore && (
+      {isTrimmed && (
         <button
           className="review-card__read-more"
           onClick={() => setIsExpanded(!isExpanded)}
           aria-label={isExpanded ? 'Show less' : 'Read more'}
+          aria-expanded={isExpanded}
         >
           {isExpanded ? 'Show less' : 'Read more'}
         </button>
